@@ -5,16 +5,21 @@ fn default_dsn() -> String {
     "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable".to_string()
 }
 
+fn default_log_level() -> String {
+  "debug".to_string()
+}
+
 #[derive(Deserialize, Debug)]
 pub struct Config {
   #[serde(default="default_dsn")]
-  pub dsn: String
+  pub dsn: String,
+  #[serde(default="default_log_level")]
+  pub log_level: String, 
 }
 
 impl Display for Config {
   fn fmt(&self, f: &mut Formatter) -> Result {
-      write!(f, "Display Config\ndsn: {}", self.dsn
-    )
+      write!(f, "Display Config\ndsn: {}\nlog_level: {}\n", self.dsn, self.log_level)
   }
 }
 

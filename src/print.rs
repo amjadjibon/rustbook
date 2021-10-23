@@ -86,3 +86,11 @@ pub fn complexprint(re: f32, im: f32) {
     println!("Debug: {:?}", num);
     println!("Pretty Debug: {:#?}", num);
 }
+
+use log::{LevelFilter, debug, error, info, warn};
+pub fn logger_ex() {
+    info!("this is {}", LevelFilter::Info);
+    error!("this is {}", LevelFilter::Error);
+    debug!("this is {}", LevelFilter::Debug);
+    warn!("this is {}", LevelFilter::Warn);
+}
