@@ -1,8 +1,6 @@
-mod print;
-mod city;
-mod colors;
-
-use print::{hello, comment, fmtprint, fmtprint2, fmtprint3, debugprint, complexprint, points};
+use rustbook::colors;
+use rustbook::city;
+use rustbook::print::{hello, comment, fmtprint, fmtprint2, fmtprint3, debugprint, complexprint, points};
 
 fn main() {
     hello();
