@@ -1,3 +1,5 @@
+use unicode_segmentation::UnicodeSegmentation;
+
 fn main() {
     println!("Hello, world!");
 
@@ -93,5 +95,7 @@ fn main() {
         println!("{}", b);
     }
 
-
+    for g in "नमस्ते".graphemes(true) {
+        println!("{}", g);
+    }
 }
